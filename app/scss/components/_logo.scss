@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.logo {
+  overflow: hidden;
+  border-radius: 50%;
+
+  &--header,
+  &--footer {
+    @extend .logo;
+  }
+
+  &--header {
+    --logo-size: #{rem(125)};
+    width: var(--logo-size);
+    height: var(--logo-size);
+    margin-block-end: rem(68);
+  }
+
+  &--footer {
+    --logo-size: #{rem(55)};
+    width: var(--logo-size);
+    height: var(--logo-size);
+  }
+}

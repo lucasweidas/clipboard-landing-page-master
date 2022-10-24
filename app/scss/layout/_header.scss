@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+.header {
+  --header-background-url: url('../images/bg-header-mobile.png');
+  --header-background-width: 100%;
+  --header-background-height: #{rem(363)};
+  background: var(--header-background-url) top center / var(--header-background-width) var(--header-background-height) no-repeat;
+  padding-block-start: rem(120);
+
+  @include breakpoint-down(xsmall) {
+    --header-background-width: auto;
+  }
+
+  @include breakpoint(large) {
+    --header-background-url: url('../images/bg-header-desktop.png');
+    --header-background-width: auto;
+  }
+
+  @include breakpoint(xlarge) {
+    --header-background-width: 100%;
+  }
+}

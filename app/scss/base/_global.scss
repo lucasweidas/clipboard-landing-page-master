@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+:root {
+  --container-max-width: #{rem(1110)};
+  --container-inline-padding: clamp(#{rem(24)}, 8.7vw, #{rem(33)});
+  --duration-1: 150ms;
+}
+
+.container {
+  width: min(100% - (var(--container-inline-padding) * 2), var(--container-max-width));
+  margin-inline: auto;
+}
+
+.margin-block {
+  &--md {
+    margin-block-start: rem(92);
+  }
+
+  &--lg {
+    margin-block-start: rem(136);
+  }
+
+  &--xl {
+    margin-block-start: rem(164);
+  }
+}
+
+.content {
+  display: grid;
+  justify-items: center;
+}
+
+.two-columns {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin-block-start: rem(20);
+
+  @include breakpoint(large) {
+    width: rem(900);
+    grid-template-columns: rem(450) rem(336);
+    justify-content: space-between;
+    margin-inline: auto;
+  }
+}

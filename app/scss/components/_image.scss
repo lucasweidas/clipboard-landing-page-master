@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.image {
+  &--computer {
+    width: min(100%, rem(450));
+
+    @include breakpoint(large) {
+      img {
+        width: min(50vw, rem(720));
+        max-width: none;
+        float: right;
+      }
+    }
+  }
+
+  &--devices {
+    width: min(100% + rem(36), rem(450));
+
+    @include breakpoint(large) {
+      width: min(70vw, rem(848));
+    }
+  }
+}

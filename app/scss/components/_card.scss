@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.card {
+  display: grid;
+  justify-items: center;
+
+  &--start,
+  &--center {
+    @extend .card;
+    max-width: rem(500);
+  }
+
+  &--start {
+    @include breakpoint(large) {
+      justify-items: flex-start;
+
+      .text--card,
+      .heading-3 {
+        text-align: start;
+      }
+    }
+  }
+
+  &__icon {
+    margin-block-end: rem(40);
+  }
+}
